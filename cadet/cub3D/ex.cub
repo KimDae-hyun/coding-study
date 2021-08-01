@@ -1,5 +1,5 @@
 R 1024 768
-NO		 ./tex/eagle.xpm
+NO ./tex/eagle.xpm
 SO ./tex/greystone.xpm
 WE ./tex/redbrick.xpm
 EA ./tex/purplestone.xpm

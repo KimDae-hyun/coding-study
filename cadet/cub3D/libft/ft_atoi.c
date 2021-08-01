@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static int			check(const char *str, int *i)
+static int			check(char *str, int *i)
 {
 	int				a;
 	int				count;
@@ -31,7 +31,7 @@ static int			check(const char *str, int *i)
 	return (count);
 }
 
-int					ft_atoi(const char *str)
+int					ft_atoi(char *str)
 {
 	int				i;
 	int				sign;
