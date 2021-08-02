@@ -6,13 +6,13 @@
 /*   By: daekim <daekim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/28 10:56:15 by daekim            #+#    #+#             */
-/*   Updated: 2021/01/01 22:39:48 by daekim           ###   ########.fr       */
+/*   Updated: 2021/08/02 09:12:17 by daekim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int			power(int i)
+static int	power(int i)
 {
 	int				a;
 
@@ -25,7 +25,7 @@ static int			power(int i)
 	return (a);
 }
 
-void				ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
 	int				i;
 	long long int	num;

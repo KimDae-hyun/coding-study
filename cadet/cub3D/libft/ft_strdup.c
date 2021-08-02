@@ -6,13 +6,13 @@
 /*   By: daekim <daekim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/26 16:34:53 by daekim            #+#    #+#             */
-/*   Updated: 2021/03/02 04:42:10 by daekim           ###   ########.fr       */
+/*   Updated: 2021/08/02 09:05:03 by daekim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strdup(char *s1)
+char	*ft_strdup(char *s1)
 {
 	char	*s;
 	int		len;

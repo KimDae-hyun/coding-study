@@ -6,7 +6,7 @@
 /*   By: daekim <daekim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/28 10:51:21 by daekim            #+#    #+#             */
-/*   Updated: 2021/07/17 18:34:23 by daekim           ###   ########.fr       */
+/*   Updated: 2021/08/02 09:03:05 by daekim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ static void	check1(char *s1, char *set, size_t *i)
 	*i = begin;
 }
 
-char		*ft_strtrim(char *s1, char *set)
+char	*ft_strtrim(char *s1, char *set)
 {
 	char	*new;
 	size_t	i;
@@ -69,14 +69,12 @@ char		*ft_strtrim(char *s1, char *set)
 	check2(s1, set, &j);
 	if (i >= j)
 		i = 0;
-	if (!(new = malloc(sizeof(char) * (j - i + 1))))
+	new = malloc(sizeof(char) * (j - i + 1));
+	if (!new)
 		return (0);
-	k = 0;
-	while (k + i < j)
-	{
+	k = -1;
+	while (++k + i < j)
 		new[k] = s1[k + i];
-		k++;
-	}
 	new[k] = '\0';
 	return (new);
 }

@@ -6,7 +6,7 @@
 /*   By: daekim <daekim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/23 10:02:28 by daekim            #+#    #+#             */
-/*   Updated: 2020/12/31 19:45:03 by daekim           ###   ########.fr       */
+/*   Updated: 2021/08/02 09:13:16 by daekim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memset(void *src, int c, size_t size)
 {
-	unsigned char *dest;
+	unsigned char	*dest;
 
 	dest = src;
 	while (size-- > 0)

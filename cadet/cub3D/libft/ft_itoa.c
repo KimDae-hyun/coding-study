@@ -6,13 +6,13 @@
 /*   By: daekim <daekim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/28 10:52:47 by daekim            #+#    #+#             */
-/*   Updated: 2021/01/01 22:44:23 by daekim           ###   ########.fr       */
+/*   Updated: 2021/08/02 09:22:22 by daekim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int			nlen(long long int n)
+static int	nlen(long long int n)
 {
 	int				i;
 
@@ -32,7 +32,7 @@ static int			nlen(long long int n)
 	return (i);
 }
 
-char				*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	char			*num;
 	long long int	nu;
@@ -42,7 +42,8 @@ char				*ft_itoa(int n)
 		return (ft_strdup("0"));
 	nu = n;
 	a = nlen(nu);
-	if (!(num = (char *)ft_calloc((a + 1), sizeof(char))))
+	num = (char *)ft_calloc((a + 1), sizeof(char));
+	if (!num)
 		return (0);
 	if (nu < 0)
 	{
@@ -54,8 +55,7 @@ char				*ft_itoa(int n)
 	{
 		num[a] = (nu % 10) + 48;
 		nu = nu / 10;
-		a--;
-		if (a == 0 && nu > 0)
+		if (--a == 0 && nu > 0)
 			num[a] = (nu % 10) + 48;
 	}
 	return (num);

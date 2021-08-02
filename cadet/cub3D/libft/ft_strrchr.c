@@ -6,7 +6,7 @@
 /*   By: daekim <daekim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/24 10:41:26 by daekim            #+#    #+#             */
-/*   Updated: 2020/12/31 19:51:44 by daekim           ###   ########.fr       */
+/*   Updated: 2021/08/02 09:01:04 by daekim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strrchr(char *src, int c)
 {
-	char *i;
+	char	*i;
 
 	i = 0;
 	while (*src)

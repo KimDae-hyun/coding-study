@@ -6,7 +6,7 @@
 /*   By: daekim <daekim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/26 09:26:09 by daekim            #+#    #+#             */
-/*   Updated: 2021/07/17 18:32:52 by daekim           ###   ########.fr       */
+/*   Updated: 2021/08/02 08:58:47 by daekim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-typedef struct	s_list
+typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;

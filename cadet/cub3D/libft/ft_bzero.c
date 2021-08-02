@@ -6,7 +6,7 @@
 /*   By: daekim <daekim@student.42seoul.ck>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/31 19:46:10 by daekim            #+#    #+#             */
-/*   Updated: 2020/12/31 19:46:30 by daekim           ###   ########.fr       */
+/*   Updated: 2021/08/02 09:24:31 by daekim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_bzero(void *src, size_t size)
 {
-	unsigned char *dest;
+	unsigned char	*dest;
 
 	dest = src;
 	while (size-- > 0)

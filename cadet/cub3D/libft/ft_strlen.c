@@ -6,7 +6,7 @@
 /*   By: daekim <daekim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/24 09:25:01 by daekim            #+#    #+#             */
-/*   Updated: 2021/03/02 04:42:02 by daekim           ###   ########.fr       */
+/*   Updated: 2021/08/02 09:03:29 by daekim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	ft_strlen(char *src)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (src[i])

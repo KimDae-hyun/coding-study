@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcstr.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daekim <daekim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/26 08:59:39 by daekim            #+#    #+#             */
-/*   Updated: 2020/12/31 22:33:36 by daekim           ###   ########.fr       */
+/*   Updated: 2021/08/02 09:01:19 by daekim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strnstr(char *dest, char *src, size_t size)
+char	*ft_strnstr(char *dest, char *src, size_t size)
 {
 	size_t	i;
 	size_t	j;

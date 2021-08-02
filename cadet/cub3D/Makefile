@@ -6,7 +6,7 @@
 #    By: daekim <daekim@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/22 14:50:24 by daekim            #+#    #+#              #
-#    Updated: 2021/03/16 18:57:43 by daekim           ###   ########.fr        #
+#    Updated: 2021/08/02 09:53:42 by daekim           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,7 @@ BONUS_OBJS =	$(BONUS_SRCS:.c=.o)
 
 CC =		gcc
 
-CFLAGS =	-Wall -Wextra -Werror -O3
+CFLAGS =	-Wall -Wextra -Werror -O3 
 
 MLXFLAGS =	-framework OpenGL -framework Appkit
 

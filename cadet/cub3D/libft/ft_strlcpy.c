@@ -6,13 +6,13 @@
 /*   By: daekim <daekim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/26 09:23:26 by daekim            #+#    #+#             */
-/*   Updated: 2020/12/31 19:49:19 by daekim           ###   ########.fr       */
+/*   Updated: 2021/08/02 09:03:48 by daekim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t		ft_strlcpy(char *dest, char *src, size_t size)
+size_t	ft_strlcpy(char *dest, char *src, size_t size)
 {
 	size_t	len;
 	size_t	i;

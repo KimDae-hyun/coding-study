@@ -6,13 +6,13 @@
 /*   By: daekim <daekim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/31 09:05:42 by daekim            #+#    #+#             */
-/*   Updated: 2021/03/02 04:42:56 by daekim           ###   ########.fr       */
+/*   Updated: 2021/08/02 09:11:34 by daekim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void		scpy(char *new, char *s, size_t i, size_t start)
+static void	scpy(char *new, char *s, size_t i, size_t start)
 {
 	size_t		j;
 
@@ -25,7 +25,7 @@ static void		scpy(char *new, char *s, size_t i, size_t start)
 	}
 }
 
-static char		ft_free(char **new, size_t num)
+static char	ft_free(char **new, size_t num)
 {
 	size_t		i;
 
@@ -36,7 +36,7 @@ static char		ft_free(char **new, size_t num)
 	return (0);
 }
 
-static void		spliting(char *s, char c, char **new)
+static void	spliting(char *s, char c, char **new)
 {
 	size_t		i;
 	size_t		count;
@@ -51,8 +51,8 @@ static void		spliting(char *s, char c, char **new)
 			start = i;
 			while (s[i] != c && s[i])
 				i++;
-			if (!(new[count] = (char *)ft_calloc((i - start + 1),
-							sizeof(char))))
+			new[count] = (char *)ft_calloc((i - start + 1), sizeof(char));
+			if (!new[count])
 			{
 				ft_free(new, count);
 				return ;
@@ -86,7 +86,7 @@ static size_t	countc(char *s, char c)
 	return (count);
 }
 
-char			**ft_split(char *s, char c)
+char	**ft_split(char *s, char c)
 {
 	char		**new;
 	size_t		num;
@@ -94,7 +94,8 @@ char			**ft_split(char *s, char c)
 	if (s == 0)
 		return (0);
 	num = countc(s, c);
-	if (!(new = (char **)ft_calloc((num + 1), sizeof(char *))))
+	new = (char **)ft_calloc((num + 1), sizeof(char *));
+	if (!new)
 		return (0);
 	spliting(s, c, new);
 	return (new);

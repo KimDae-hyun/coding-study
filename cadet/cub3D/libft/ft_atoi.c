@@ -6,13 +6,13 @@
 /*   By: daekim <daekim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/26 09:10:01 by daekim            #+#    #+#             */
-/*   Updated: 2021/01/01 22:42:58 by daekim           ###   ########.fr       */
+/*   Updated: 2021/08/02 09:24:46 by daekim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int			check(char *str, int *i)
+static int	check(char *str, int *i)
 {
 	int				a;
 	int				count;
@@ -31,7 +31,7 @@ static int			check(char *str, int *i)
 	return (count);
 }
 
-int					ft_atoi(char *str)
+int	ft_atoi(char *str)
 {
 	int				i;
 	int				sign;

@@ -6,7 +6,7 @@
 /*   By: daekim <daekim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/24 09:18:31 by daekim            #+#    #+#             */
-/*   Updated: 2020/12/31 19:48:34 by daekim           ###   ########.fr       */
+/*   Updated: 2021/08/02 09:17:04 by daekim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_memcmp(const void *s1, const void *s2, size_t size)
 {
-	unsigned char *ss1;
-	unsigned char *ss2;
+	unsigned char	*ss1;
+	unsigned char	*ss2;
 
 	ss1 = (unsigned char *)s1;
 	ss2 = (unsigned char *)s2;

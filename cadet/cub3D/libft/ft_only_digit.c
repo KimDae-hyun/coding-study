@@ -6,13 +6,13 @@
 /*   By: daekim <daekim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/26 09:13:52 by daekim            #+#    #+#             */
-/*   Updated: 2021/03/03 03:56:36 by daekim           ###   ########.fr       */
+/*   Updated: 2021/08/02 09:13:01 by daekim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_only_digit(char *dig)
+int	ft_only_digit(char *dig)
 {
 	int	i;
 

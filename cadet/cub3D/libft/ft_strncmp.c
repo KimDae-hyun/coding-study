@@ -6,13 +6,13 @@
 /*   By: daekim <daekim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/26 09:07:38 by daekim            #+#    #+#             */
-/*   Updated: 2021/03/09 03:14:00 by daekim           ###   ########.fr       */
+/*   Updated: 2021/08/02 09:01:32 by daekim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int					ft_strncmp(char *s1, char *s2, size_t size)
+int	ft_strncmp(char *s1, char *s2, size_t size)
 {
 	unsigned char	*ss1;
 	unsigned char	*ss2;

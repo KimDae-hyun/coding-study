@@ -6,13 +6,13 @@
 /*   By: daekim <daekim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/23 10:22:14 by daekim            #+#    #+#             */
-/*   Updated: 2020/12/31 19:46:54 by daekim           ###   ########.fr       */
+/*   Updated: 2021/08/02 09:16:50 by daekim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void			*ft_memcpy(void *dest, const void *src, size_t size)
+void	*ft_memcpy(void *dest, const void *src, size_t size)
 {
 	char		*d;
 	const char	*s;
