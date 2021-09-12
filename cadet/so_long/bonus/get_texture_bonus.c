@@ -80,43 +80,43 @@ void	get_texture3(t_info *info)
 void	get_texture2(t_info *info)
 {
 	info->tex[9].img = mlx_xpm_file_to_image(info->win.mlx, \
-	"./texture/left1.xpm", &info->tex[9].img_width, &info->tex[9].img_height);
+	"./texture/l_b.xpm", &info->tex[9].img_width, &info->tex[9].img_height);
 	info->tex[10].img = mlx_xpm_file_to_image(info->win.mlx, \
-	"./texture/left2.xpm", &info->tex[10].img_width, &info->tex[10].img_height);
+	"./texture/do_l.xpm", &info->tex[10].img_width, &info->tex[10].img_height);
 	info->tex[11].img = mlx_xpm_file_to_image(info->win.mlx, \
-	"./texture/back1.xpm", &info->tex[11].img_width, &info->tex[11].img_height);
+	"./texture/up_r.xpm", &info->tex[11].img_width, &info->tex[11].img_height);
 	info->tex[12].img = mlx_xpm_file_to_image(info->win.mlx, \
-	"./texture/back2.xpm", &info->tex[12].img_width, &info->tex[12].img_height);
+	"./texture/up_l.xpm", &info->tex[12].img_width, &info->tex[12].img_height);
 	info->tex[13].img = mlx_xpm_file_to_image(info->win.mlx, \
-	"./texture/fro_l.xpm", &info->tex[13].img_width, &info->tex[13].img_height);
+	"./texture/do_l.xpm", &info->tex[13].img_width, &info->tex[13].img_height);
 	info->tex[14].img = mlx_xpm_file_to_image(info->win.mlx, \
-	"./texture/fro_r.xpm", &info->tex[14].img_width, &info->tex[14].img_height);
+	"./texture/do_r.xpm", &info->tex[14].img_width, &info->tex[14].img_height);
 	info->tex[15].img = mlx_xpm_file_to_image(info->win.mlx, \
-	"./texture/vil_r.xpm", &info->tex[15].img_width, &info->tex[15].img_height);
+	"./texture/tur_r.xpm", &info->tex[15].img_width, &info->tex[15].img_height);
 	info->tex[16].img = mlx_xpm_file_to_image(info->win.mlx, \
-	"./texture/vil_l.xpm", &info->tex[16].img_width, &info->tex[16].img_height);
+	"./texture/tur_l.xpm", &info->tex[16].img_width, &info->tex[16].img_height);
 	get_texture3(info);
 }
 
 void	get_texture(t_info *info)
 {
 	info->tex[0].img = mlx_xpm_file_to_image(info->win.mlx, \
-	"./texture/grass.xpm", &info->tex[0].img_width, &info->tex[0].img_height);
+	"./texture/fl_b.xpm", &info->tex[0].img_width, &info->tex[0].img_height);
 	info->tex[1].img = mlx_xpm_file_to_image(info->win.mlx, \
 	"./texture/wall.xpm", &info->tex[1].img_width, &info->tex[1].img_height);
 	info->tex[2].img = mlx_xpm_file_to_image(info->win.mlx, \
-	"./texture/col1.xpm", &info->tex[2].img_width, &info->tex[2].img_height);
+	"./texture/mush1.xpm", &info->tex[2].img_width, &info->tex[2].img_height);
 	info->tex[3].img = mlx_xpm_file_to_image(info->win.mlx, \
-	"./texture/col2.xpm", &info->tex[3].img_width, &info->tex[3].img_height);
+	"./texture/mush2.xpm", &info->tex[3].img_width, &info->tex[3].img_height);
 	info->tex[4].img = mlx_xpm_file_to_image(info->win.mlx, \
-	"./texture/col3.xpm", &info->tex[4].img_width, &info->tex[4].img_height);
+	"./texture/mush3.xpm", &info->tex[4].img_width, &info->tex[4].img_height);
 	info->tex[5].img = mlx_xpm_file_to_image(info->win.mlx, \
-	"./texture/col2.xpm", &info->tex[5].img_width, &info->tex[5].img_height);
+	"./texture/mush2.xpm", &info->tex[5].img_width, &info->tex[5].img_height);
 	info->tex[6].img = mlx_xpm_file_to_image(info->win.mlx, \
-	"./texture/exit.xpm", &info->tex[6].img_width, &info->tex[6].img_height);
+	"./texture/ex_b.xpm", &info->tex[6].img_width, &info->tex[6].img_height);
 	info->tex[7].img = mlx_xpm_file_to_image(info->win.mlx, \
-	"./texture/right1.xpm", &info->tex[7].img_width, &info->tex[7].img_height);
+	"./texture/r_b.xpm", &info->tex[7].img_width, &info->tex[7].img_height);
 	info->tex[8].img = mlx_xpm_file_to_image(info->win.mlx, \
-	"./texture/right2.xpm", &info->tex[8].img_width, &info->tex[8].img_height);
+	"./texture/do_r.xpm", &info->tex[8].img_width, &info->tex[8].img_height);
 	get_texture2(info);
 }
