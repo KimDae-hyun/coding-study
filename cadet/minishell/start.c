@@ -5,9 +5,12 @@ int	get_path(t_mini *mini)
 	char		*path;
 	char		*temp;
 	int			idx;
+	int			ret;
 //	static int	path_flag;
 
-	path = getenv("PATH");
+	ret = ft_getenv(mini, &path, "PATH");
+	if (ret == 0)
+		return (mini->err.malloc);
 	mini->path = ft_split(path, ':');
 	idx = -1;
 	while (mini->path[++idx])
@@ -164,12 +167,12 @@ int	main(int argc, char **argv, char **envp) //파싱작업
 		return (0);
 	}
 	mini.exit_stat = 0;
+	mini.envp = &envp;
 	while (1)
 	{
 		str = readline("minishell $ "); //표준입력
 		if (str == 0 || *str == 0)
 			continue ;
-		mini.envp = &envp;
 		ret = mini_process(str, &mini);
 		add_history(str);
 		ret = main_free(&mini, str, ret);
