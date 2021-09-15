@@ -14,7 +14,7 @@
 
 void	print_error(int i)
 {
-	printf("Error : ");
+	printf("Error\n");
 	if (i == 0)
 		printf("number of arguments isn't right\n");
 	if (i == 1)
@@ -43,7 +43,7 @@ void	show_win(t_info *info)
 		64 * info->map.row))
 		print_error(6);
 	info->win.mlx_win = mlx_new_window(info->win.mlx, 64 * info->map.col, \
-	64 * info->map.row, "Bubble Bobble");
+	64 * info->map.row, "Super");
 	info->fimg.img = mlx_new_image(info->win.mlx, 64 * info->map.col, \
 	64 * info->map.row);
 	info->fimg.addr = (unsigned int *)mlx_get_data_addr(info->fimg.img, \
