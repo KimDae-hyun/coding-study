@@ -6,7 +6,7 @@
 /*   By: daekim <daekim@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/04 11:47:14 by daekim            #+#    #+#             */
-/*   Updated: 2021/09/04 11:47:15 by daekim           ###   ########.fr       */
+/*   Updated: 2021/10/10 21:41:13 by daekim           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,6 @@ void	info_init(t_info *info)
 	info->map.v_d = 0;
 	info->map.v_x = -1;
 	info->map.v_y = -1;
-
 }
 
 void	parsing(t_info *info, char *argv)
