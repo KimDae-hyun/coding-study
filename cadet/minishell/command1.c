@@ -1,32 +1,8 @@
 #include "minishell.h"
 
-void	ft_echo(t_mini *mini)
+void	ft_pwd(void)
 {
-	int idx;
-	int option;
-
-	idx = mini->first;
-	option = mini->first + 1;
-	while (mini->buf[++idx] != 0 && *(mini->buf[idx]) == 0) 
-		option++;
-	idx = mini->first;
-	while(mini->buf[++idx])
-	{
-		if (idx == option && \
-				!ft_strncmp(mini->buf[option], "-n", 3))
-			idx++;
-		printf("%s", mini->buf[idx]);
-		if (mini->buf[idx + 1] != 0 /*&& *(mini->buf[idx]) != 0*/)
-			printf(" ");
-		if (mini->buf[idx + 1] == 0 && \
-				ft_strncmp(mini->buf[option], "-n", 3))
-			printf("\n");
-	}	
-}
-
-void	ft_pwd(void)//export구현 후 수정
-{
-	char pwd[1024];
+	char	pwd[1024];
 
 	printf("%s\n", getcwd(pwd, 1024));
 }
@@ -40,60 +16,31 @@ void	ft_env(char ***envp)
 		printf("%s\n", (*envp)[idx]);
 }
 
-int	change_pwd(t_mini *mini)
+void	ft_exit(t_mini *mini)
 {
-	char	pwd[1024];
-	int		idx;
-	int		jdx;
+	int	i;
 
-	jdx = -1;
-	while ((*mini->envp)[++jdx])
-		if (!ft_strncmp((*mini->envp)[jdx], "PWD=", 4))
-		{
-			idx = -1;
-			while ((*mini->envp)[++idx])
-				if (!ft_strncmp((*mini->envp)[idx], "OLDPWD=", 7))
-				{
-					(*mini->envp)[idx] = ft_strdup(ft_strjoin("OLD", (*mini->envp)[jdx]));
-					if (!(*mini->envp)[idx])
-						return (mini->err.malloc);
-				}
-			(*mini->envp)[jdx] = ft_strdup(ft_strjoin("PWD=", getcwd(pwd, 1024)));
-			//leak check
-		}
-	return (0);
-}
-
-int	ft_chdir(t_mini *mini)
-{
-	int		idx;
-	char	*dest;
-	int		ret;
-
-	idx = mini->first;
-	while (mini->buf[++idx] != 0 && *(mini->buf[idx]) == 0)
-		;
-	if (mini->buf[idx] == 0)
+	printf("exit\n");
+	if (mini->buf[1])
 	{
-		ret = ft_getenv(mini, &dest, "HOME");
-		if (ret == mini->err.malloc)
-			return (mini->err.malloc);
-		else if (ret == 0)
+		i = -1;
+		if (mini->buf[1][0] == '-' || mini->buf[1][0] == '+')
+			i++;
+		while (mini->buf[1][++i])
 		{
-			printf("minishell: cd: HOME not set\n");
-			return (0);
+			if ('0' > mini->buf[1][i] || mini->buf[1][i] > '9')
+			{
+				printf("minishell: exit: ");
+				printf("%s: numeric argument required\n", mini->buf[1]);
+				exit (255);
+			}
 		}
-		chdir(dest);// 클러스터랑 좀 다른 것 같다고함
-		free(dest);
-		if (change_pwd(mini))
-			return (mini->err.malloc);
+		if (mini->buf[2] && *(mini->buf[2]))
+		{
+			printf("minishell: exit: too many arguments\n");
+			exit(1);
+		}
+		exit(ft_atoi(mini->buf[1]));
 	}
-	else if (&(mini->buf[idx]) != 0 && chdir(mini->buf[idx]) == 0)
-	{
-		if (change_pwd(mini))
-			return (mini->err.malloc);
-	}
-	else
-		printf("minishell: %s: %s\n", mini->buf[idx], strerror(errno));
-	return (0);
+	exit(0);
 }

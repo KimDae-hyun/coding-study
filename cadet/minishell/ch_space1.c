@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ch_space1.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: daekim <daekim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*   By: sonkang <sonkang@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/31 09:05:42 by daekim            #+#    #+#             */
-/*   Updated: 2021/09/09 17:55:04 by junghan          ###   ########.fr       */
+/*   Updated: 2021/10/13 11:15:50 by sonkang          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,11 @@ static int	scpy(char *new, char *str, size_t end, t_mini *mini)
 	mini->d_quo = 0;
 	while (start < end)
 	{
-		//	printf("start : %zu end : %zu\n", start, end);
 		if (case_quo(str, &idx, mini))
 			continue ;
 		if (mini->s_quo == 0 && str[idx] == '$')
 		{
 			idx = copy_env(&new[start], str, idx, mini);	
-			//		printf("new : %c\n", new[start]);
 			if (idx == mini->err.malloc)
 				return (mini->err.malloc);
 			if (new[start] != 0)
@@ -41,7 +39,6 @@ static int	scpy(char *new, char *str, size_t end, t_mini *mini)
 			else
 				continue ;
 		}
-		//printf("str = %c\n", str[idx]);
 		new[start++] = str[idx++];
 		if (str[idx - 1] == '\0')
 			break ;
@@ -62,7 +59,6 @@ static int	spliting(char *s, char space, char **new, t_mini *mini)
 	{			
 		if (s[i] && s[i] != space && s[i] != '|' && s[i] != '<' && s[i] != '>')
 		{
-			mini->quo_flag = 0;
 			mini->pre_flag = 0;
 			mini->env_flag = 0;
 			mini->cnt_quo = 0;
@@ -72,20 +68,13 @@ static int	spliting(char *s, char space, char **new, t_mini *mini)
 			i = quo_while(s, space, mini, i); //countc와 동일한 작업
 			if (mini->env_flag == 1)
 				continue ;
-			//	printf("count : %lu\n", i - start + 1 - mini->cnt_quo + mini->env_len - mini->dollar - mini->quo_flag);
-			/*
-			   printf("i      : %zu, start   : %zu, cnt_quo  : %d, env_len	: %d\n", i, start, mini->cnt_quo, mini->env_len);
-			   printf("dollar : %d, quo_flag : %d, env_flag : %d\n", mini->dollar, mini->quo_flag, mini->env_flag);*/
 			new[count] = (char *)ft_calloc((i - start + 1 \
-						- mini->cnt_quo + mini->env_len - mini->dollar - mini->quo_flag), sizeof(char)); //역슬래쉬와 따옴표의 갯수만큼 적게할당
+						- mini->cnt_quo + mini->env_len - mini->dollar), sizeof(char)); //역슬래쉬와 따옴표의 갯수만큼 적게할당
 			if (!new[count] || i == (size_t)mini->err.malloc)
 				return (mini->err.malloc);
-			//	if (mini->quo_flag == 0)
-			//	{
 			if (scpy(new[count], &s[start], (i - start \
-							- mini->cnt_quo + mini->env_len - mini->dollar - mini->quo_flag), mini))//구분된 문자열을 new라는 이중배열에 넣어줌
+							- mini->cnt_quo + mini->env_len - mini->dollar), mini))//구분된 문자열을 new라는 이중배열에 넣어줌
 				return (mini->err.malloc);
-			//	}
 			count++;
 		}
 		else if (s[i] == space)
@@ -172,11 +161,18 @@ int	check_pipe_pos(t_mini *mini)
 
 int	check_redirect(t_mini *mini)
 {
-	int	idx;
+	int		idx;
+	int		pipe_idx;
 
+	if (!mini->redirect)
+		return (0);
+	mini->red_cnt = (int *)ft_calloc(mini->pipe + 1, sizeof(int));
 	idx = -1;
+	pipe_idx = 0;
 	while (mini->buf[++idx])
 	{
+		if (*(mini->buf[idx]) == '|')
+			pipe_idx++;
 		if (*(mini->buf[idx]) == '<')
 		{
 			if (mini->buf[idx][1] == '<' && mini->buf[idx][2] != '\0')
@@ -189,6 +185,7 @@ int	check_redirect(t_mini *mini)
 				cmd_err(&(mini->buf[idx][1]), mini->err.redirect, mini);
 				return (mini->err.redirect);
 			}
+			mini->red_cnt[pipe_idx]++;
 		}
 		else if (*(mini->buf[idx]) == '>')
 		{
@@ -202,6 +199,7 @@ int	check_redirect(t_mini *mini)
 				cmd_err(&(mini->buf[idx][1]), mini->err.redirect, mini);
 				return (mini->err.redirect);
 			}
+			mini->red_cnt[pipe_idx]++;
 		}
 	}
 	return (0);
@@ -222,6 +220,11 @@ int	space_split(char *s, char space, t_mini *mini)
 	if (check_pipe_pos(mini) == mini->err.pipe)
 		return (mini->err.pipe);
 	if (check_redirect(mini) == mini->err.redirect)
+	{
+		mini->redirect = 0;
+		if (!mini->redirect)
+			free(mini->red_cnt);
 		return (mini->err.redirect);
+	}
 	return (1);
 }
