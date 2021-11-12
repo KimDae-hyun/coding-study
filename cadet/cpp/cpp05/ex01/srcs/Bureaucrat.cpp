@@ -1,4 +1,4 @@
-#include "Bureaucrat.hpp"
+#include "../includes/Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat() : name("cheolsoo")
 {
@@ -6,7 +6,7 @@ Bureaucrat::Bureaucrat() : name("cheolsoo")
     std::cout << "Create Bureaucrat!" << std::endl;
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat &src) : name(src.name)
+Bureaucrat::Bureaucrat(const Bureaucrat &src) : name("cheolsoo")
 {
     *this = src;
 }    
@@ -84,3 +84,18 @@ void Bureaucrat::demotion(int changetheworld)
     std::cout << *this ;
 }
 
+void Bureaucrat::signForm(Form &src)
+{
+    if (src.getSign() == true)
+    {
+        std::cout << "<" << getName() << \
+        "> sign <" << src.getName() << \
+        ">" << std::endl;
+    }
+    else
+    {
+        std::cout << "<" << getName() << \
+        "> cannot sign <" << src.getName() << \
+        "> because <Too Low !!!>" << std::endl;
+    }
+}
