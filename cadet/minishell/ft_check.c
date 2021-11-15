@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_check.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: junghan <junghan@student.42seoul.kr>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/15 10:15:06 by junghan           #+#    #+#             */
+/*   Updated: 2021/11/15 10:16:07 by junghan          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "minishell.h"
 
 void	handle_status(t_mini *mini, char *cmd, int status)
@@ -73,7 +85,10 @@ int	check_path(t_mini *mini, char *cmd)
 		signal(SIGINT, SIG_IGN);
 		signal(SIGQUIT, SIG_IGN);
 		wait(&status);
-		mini->exit_stat = WEXITSTATUS(status);
+		if (status < 128 && status != 0)
+			mini->exit_stat = status + 128;
+		else
+			mini->exit_stat = WEXITSTATUS(status);
 		if (status == 3072)
 			return (mini->err.malloc);
 		else

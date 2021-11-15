@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_start.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: junghan <junghan@student.42seoul.kr>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/15 10:19:06 by junghan           #+#    #+#             */
+/*   Updated: 2021/11/15 10:19:08 by junghan          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "minishell.h"
 
 int	main_loop(t_mini *mini)
@@ -13,7 +25,7 @@ int	main_loop(t_mini *mini)
 		str = readline("minishell $ ");
 		if (!str)
 			sig_ctrl_d();
-		if (str == 0 || *str == 0)
+		if (*str == 0)
 		{
 			free(str);
 			continue ;
@@ -33,7 +45,7 @@ int	main(int argc, char **argv, char **envp)
 {
 	t_mini	mini;
 
-	if (argc != 1 || argv[1] != 0)
+	if (argc != 1)
 	{
 		mini.err.argv = -4;
 		cmd_err(argv[1], mini.err.argv, &mini);

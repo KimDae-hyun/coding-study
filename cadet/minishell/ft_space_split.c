@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   space_split.c                                      :+:      :+:    :+:   */
+/*   ft_space_split.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sonkang <sonkang@student.42seoul.kr>       +#+  +:+       +#+        */
+/*   By: junghan <junghan@student.42seoul.kr>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/31 09:05:42 by daekim            #+#    #+#             */
-/*   Updated: 2021/10/14 18:23:04 by daekim           ###   ########.fr       */
+/*   Created: 2021/11/15 10:18:31 by junghan           #+#    #+#             */
+/*   Updated: 2021/11/15 10:18:35 by junghan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,8 +96,7 @@ int	space_split(char *s, char space, t_mini *mini)
 	if (check_redirect(mini) == mini->err.redirect)
 	{
 		mini->redirect = 0;
-		if (!mini->redirect)
-			free(mini->red_cnt);
+		free(mini->red_cnt);
 		return (mini->err.redirect);
 	}
 	return (1);
