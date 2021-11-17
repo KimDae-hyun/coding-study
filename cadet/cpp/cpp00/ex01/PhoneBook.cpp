@@ -1,17 +1,4 @@
 #include "PhoneBook.hpp"
-class Phonebook
-{
-    private:
-    std::string contact[5];
-
-    public:
-    Phonebook();
-    void add();
-    void    output_phonebook();
-    void    output_contact();
-    static void show_contacts(Phonebook *phonebook[8], int cnt, int flag);
-    static void destruct(Phonebook *phonebook[8], int cnt, int flag);
-};
 
 Phonebook::Phonebook()
 {
@@ -96,8 +83,7 @@ void    Phonebook::show_contacts(Phonebook *phonebook[8], int cnt, int flag)
     }
     std::cout << "What are you looking for? : ";
     std::getline(std::cin, answer);
-	std::stringstream ssInt(answer);
-	ssInt >> i;
+	i = stoi(answer);
     if (0 <= i && i <= cnt)
         phonebook[i]->output_contact();
     else
