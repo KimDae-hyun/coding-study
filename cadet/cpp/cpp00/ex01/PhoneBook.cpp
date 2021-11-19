@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: daekim <daekim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/19 09:50:59 by daekim            #+#    #+#             */
+/*   Updated: 2021/11/19 17:07:44 by daekim           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "PhoneBook.hpp"
 
 Phonebook::Phonebook()
@@ -71,6 +83,8 @@ void    Phonebook::output_contact()
 void    Phonebook::show_contacts(Phonebook *phonebook[8], int cnt, int flag)
 {
     int     i;
+	int		len;
+	const char	*tmp;
     std::string answer;
 
     if (flag == 1)
@@ -83,8 +97,16 @@ void    Phonebook::show_contacts(Phonebook *phonebook[8], int cnt, int flag)
     }
     std::cout << "What are you looking for? : ";
     std::getline(std::cin, answer);
-	i = stoi(answer);
-    if (0 <= i && i <= cnt)
+	tmp = answer.c_str();
+	len = strlen(tmp);
+	for (int j = 0; j < len; j++)
+	{
+		if (tmp[j] < '0' || tmp[j] > '9')
+			break ;
+		if (j == len - 1)
+			i = atoi(tmp);
+	}
+	if (0 <= i && i <= cnt)
         phonebook[i]->output_contact();
     else
         std::cout << "You've entered a wrong number!" << std::endl;

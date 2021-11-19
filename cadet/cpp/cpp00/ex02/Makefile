@@ -4,16 +4,14 @@ CC =		clang++
 
 CXXFLAGS =	-std=c++98 -Wall -Wextra -Werror
 
-SRC =		Account.cpp test.cpp
+SRC =		Account.cpp tests.cpp
 
 OBJ = 		$(SRC:.cpp=.o)
-
-INC =		Account.hpp
 
 all :		$(NAME)
 
 $(NAME) : $(OBJ)
-		 $(CC) $(CXXFLAGS) -I$(INC) -o $@ $^
+		 $(CC) $(CXXFLAGS) -o $@ $^
 
 clean :
 			rm -f $(OBJ)

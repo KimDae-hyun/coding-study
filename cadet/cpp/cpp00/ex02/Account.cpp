@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Account.cpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: daekim <daekim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/19 18:42:41 by daekim            #+#    #+#             */
+/*   Updated: 2021/11/19 19:07:07 by daekim           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Account.hpp"
 #include <iostream>
-#include <time.h>
+#include <ctime>
 
 int Account::_nbAccounts;
 int Account::_totalAmount;
@@ -52,7 +64,6 @@ Account::Account()
 	;
 }
 
-
 Account::Account(int initial_deposit)
 {
 	static int i;
@@ -73,8 +84,7 @@ Account::~Account()
 	_displayTimestamp();
 	std::cout << " index:" << _accountIndex << \
 	";amount:" << _amount << ";closed";
-	if (_accountIndex != 7)
-		std::cout << std::endl;
+	std::cout << std::endl;
 }
 
 void	Account::makeDeposit( int deposit )
