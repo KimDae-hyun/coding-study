@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Karen.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: daekim <daekim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/21 17:22:43 by daekim            #+#    #+#             */
+/*   Updated: 2021/11/21 17:22:44 by daekim           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Karen.hpp"
 
 Karen::Karen(void)
@@ -63,7 +75,7 @@ void Karen::complain( std::string level )
 			(this->*fp[3])();
 			break;
 		default:
-			std::cout << "STUPID KAREN!" << std::endl;
+			std::cout << "Stupid Karen! Don't say anything else!!" << std::endl;
 			break;
 	}
 }

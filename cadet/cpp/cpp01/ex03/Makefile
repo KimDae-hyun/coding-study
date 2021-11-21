@@ -6,18 +6,16 @@ CXXFLAGS =	-std=c++98 -Wall -Wextra -Werror
 
 SRC =		main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
 
-SRC_PATH = $(addprefix ./srcs/, $(SRC))
+SRC_PATH =	$(addprefix ./srcs/, $(SRC))
 
-OBJ = 		$(SRC:.cpp=.o)
-
-OBJ_PATH = $(addprefix ./objects/, $(OBJ))
+OBJ = 	$(SRC_PATH:.cpp=.o)
 
 INC_PATH = 	./includes
 
 all :		$(NAME)
 
-$(NAME) : $(OBJ_PATH)
-		 $(CC) $(CXXFLAGS) -I $(INC_PATH) -o $@ $^
+$(NAME) : $(OBJ)
+		$(CC) $(CXXFLAGS) -I $(INC_PATH) -o $@ $^
 
 clean :
 			rm -f $(OBJ)
@@ -28,3 +26,4 @@ fclean :	clean
 re :		fclean all
 
 .PHONY :	all clean fclean re
+

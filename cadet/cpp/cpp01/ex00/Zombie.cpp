@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: daekim <daekim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/21 17:20:37 by daekim            #+#    #+#             */
+/*   Updated: 2021/11/21 17:20:42 by daekim           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Zombie.hpp"
 
 Zombie::Zombie()
 {
-    name = "철수";
+    name = "daekim";
 }
 
 Zombie::Zombie(std::string name)
@@ -17,5 +29,5 @@ void    Zombie::announce(void)
 
 Zombie::~Zombie()
 {
-    std::cout << name << " is down..." << std::endl;
+    std::cout << name << " is gone..." << std::endl;
 }

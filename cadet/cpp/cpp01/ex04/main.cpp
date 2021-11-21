@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: daekim <daekim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/21 17:22:28 by daekim            #+#    #+#             */
+/*   Updated: 2021/11/21 17:22:31 by daekim           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <fstream>
 #include <iostream>
 #include <string>
@@ -30,10 +42,8 @@ int main(int argc, char **argv)
 	try
 	{
 		newFile.open(name + ".replace", std::ios::out);
-		if (newFile.fail())
-			throw newFile.fail();
 	}
-	catch (int error)
+	catch (std::fstream::failure e)
 	{
 		std::cout << "Error : open" << std::endl;
 		return (-1);

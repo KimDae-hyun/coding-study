@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: daekim <daekim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/21 17:22:09 by daekim            #+#    #+#             */
+/*   Updated: 2021/11/21 17:22:10 by daekim           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/HumanB.hpp"
 
 HumanB::HumanB(std::string name)
@@ -5,12 +17,17 @@ HumanB::HumanB(std::string name)
 	this->name = name;
 }
 
-void HumanB::setWeapon(Weapon weapon)
+HumanB::~HumanB(void)
 {
-	this->weapon = weapon.getType();
+	;
+}
+
+void HumanB::setWeapon(Weapon &weapon)
+{
+	this->weapon = &weapon;
 }
 
 void HumanB::attack()
 {
-	std::cout << this->name << " is attacking with " << this->weapon << std::endl;
+	std::cout << this->name << " is attacking with " << this->weapon->getType() << std::endl;
 }
