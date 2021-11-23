@@ -13,22 +13,18 @@
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
 
-# include <iostream>
-# include <string>
-# include <iomanip>
+# include "Contact.hpp"
 
 class Phonebook
 {
     private:
-    std::string contact[5];
+        Contact contact[8];
+        void        output_phonebook(int i);
+        void        output_contact(int i);
 
     public:
-    Phonebook();
-    void add();
-    void output_phonebook();
-    void output_contact();
-    static void show_contacts(Phonebook *phonebook[8], int cnt, int flag);
-    static void destruct(Phonebook *phonebook[8], int cnt, int flag);
+        void        add(int i);
+        void        show_contacts(int cnt, int flag);
 };
 
 #endif

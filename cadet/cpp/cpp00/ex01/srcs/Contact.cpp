@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PhoneBook.hpp"
+#include "../includes/Contact.hpp"
 
-Phonebook::Phonebook()
+Contact::Contact()
 {
     contact[0] = "";
     contact[1] = "";
@@ -35,7 +35,7 @@ void    navi_enter(int i)
         std::cout << "darkest secret : ";
 }
 
-void    Phonebook::add()
+void    Contact::add()
 {
     int     i;
 
@@ -47,7 +47,7 @@ void    Phonebook::add()
     }
 }
 
-void    Phonebook::output_phonebook()
+void    Contact::output_phonebook()
 {
     int     i;
     std::string tmp;
@@ -68,7 +68,7 @@ void    Phonebook::output_phonebook()
     std::cout << std::endl;
 }
 
-void    Phonebook::output_contact()
+void    Contact::output_contact()
 {
     int     i;
 
@@ -78,88 +78,4 @@ void    Phonebook::output_contact()
         navi_enter(i);
         std::cout << contact[i] << std::endl;
     }
-}
-
-void    Phonebook::show_contacts(Phonebook *phonebook[8], int cnt, int flag)
-{
-    int     i;
-	int		len;
-	const char	*tmp;
-    std::string answer;
-
-    if (flag == 1)
-        cnt = 7;
-    i = -1;
-    while (++i <= cnt)
-    {
-        std::cout << std::setw(10) << i << '|';
-        phonebook[i]->output_phonebook();
-    }
-    std::cout << "What are you looking for? : ";
-    std::getline(std::cin, answer);
-	tmp = answer.c_str();
-	len = strlen(tmp);
-	for (int j = 0; j < len; j++)
-	{
-		if (tmp[j] < '0' || tmp[j] > '9')
-			break ;
-		if (j == len - 1)
-			i = atoi(tmp);
-	}
-	if (0 <= i && i <= cnt)
-        phonebook[i]->output_contact();
-    else
-        std::cout << "You've entered a wrong number!" << std::endl;
-}
-
-void Phonebook::destruct(Phonebook *phonebook[8], int cnt, int flag)
-{
-    int     i;
-    if (flag == 1)
-        cnt = 7;
-    i = -1;
-    while (++i <= cnt)
-        delete phonebook[i];
-}
-
-int main(void)
-{
-    Phonebook *phonebook[8];
-    std::string str;
-    int     i;
-    int     flag;
-
-    i = -1;
-    flag = 0;
-    while (42)
-    {
-        std::cout << "Enter a command(ADD or SEARCH or EXIT) : ";
-        std::getline(std::cin, str);
-        if (str.compare("ADD") == 0)
-        {
-            i++;
-            if (flag == 0)
-                phonebook[i] = new Phonebook();
-            phonebook[i]->add();
-            if (i == 7)
-            {
-                i = -1;
-                flag = 1;
-            }
-        }
-        else if (str.compare("SEARCH") == 0)
-        {
-            Phonebook::show_contacts(phonebook, i, flag);
-        }
-        else if (str.compare("EXIT") == 0)
-        {
-            break ;
-        }
-        else
-        {
-            std::cout << "WRONG!" << std::endl;
-        }
-    }
-    Phonebook::destruct(phonebook, i, flag);
-    return (0);
 }
