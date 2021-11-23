@@ -46,6 +46,7 @@ int main(int argc, char **argv)
 	catch (std::fstream::failure e)
 	{
 		std::cout << "Error : open" << std::endl;
+		dataFile.close();
 		return (-1);
 	}
 	try
@@ -76,5 +77,7 @@ int main(int argc, char **argv)
 		if(!dataFile.eof())
 			std::cout << "Error : getline" << std::endl;
 	}
+	dataFile.close();
+	newFile.close();
 	return (0);
 }

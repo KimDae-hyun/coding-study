@@ -22,12 +22,15 @@ HumanB::~HumanB(void)
 	;
 }
 
-void HumanB::setWeapon(Weapon &weapon)
+void HumanB::setWeapon(Weapon *weapon)
 {
-	this->weapon = &weapon;
+	this->weapon = weapon;
 }
 
 void HumanB::attack()
 {
-	std::cout << this->name << " is attacking with " << this->weapon->getType() << std::endl;
+	if (weapon)
+		std::cout << this->name << " is attacking with " << this->weapon->getType() << std::endl;
+	else
+		std::cout << this->name << " is attacking with hand" << std::endl;
 }
