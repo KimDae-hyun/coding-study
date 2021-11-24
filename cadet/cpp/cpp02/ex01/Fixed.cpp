@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: daekim <daekim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/24 18:34:21 by daekim            #+#    #+#             */
+/*   Updated: 2021/11/24 18:34:23 by daekim           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.hpp"
 
 Fixed::Fixed()
@@ -9,7 +21,7 @@ Fixed::Fixed()
 Fixed::Fixed(const int num)
 {
     std::cout << "Int constructor called" << std::endl;
-    point_value = (int)(roundf(num << frac_bits));
+    point_value = num << frac_bits;
 }
 
 Fixed::Fixed(const float num)

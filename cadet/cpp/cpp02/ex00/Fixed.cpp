@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: daekim <daekim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/24 18:34:00 by daekim            #+#    #+#             */
+/*   Updated: 2021/11/24 18:34:04 by daekim           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.hpp"
 
 Fixed::Fixed()
@@ -9,7 +21,7 @@ Fixed::Fixed()
 Fixed::Fixed(const Fixed &src)
 {
     std::cout << "Copy constructor called" << std::endl;
-    this->point_value = src.getRawBits();
+    *this = src;
 }
 
 Fixed::~Fixed()
@@ -32,6 +44,7 @@ int Fixed::getRawBits( void ) const
     std::cout << "getRawBits member function called" << std::endl;
     return (this->point_value);
 }
+
 void Fixed::setRawBits( int const raw )
 {
     this->point_value = raw;
