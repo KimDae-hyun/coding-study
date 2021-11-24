@@ -1,27 +1,24 @@
-NAME =		FrapTrap
+NAME =		FragTrap
 
 CC =		clang++
 
 CXXFLAGS =	-std=c++98 -Wall -Wextra -Werror
 
-SRC =		ClapTrap.cpp FragTrap.cpp main.cpp 
+SRC =		ClapTrap.cpp ScavTrap.cpp FragTrap.cpp main.cpp
 
 SRC_PATH =	$(addprefix ./srcs/, $(SRC))
 
-SRC_OBJ = 	$(SRC_PATH:.cpp=.o)
-
-OBJ =		$(SRC:.cpp=.o)
+OBJ = 		$(SRC_PATH:.cpp=.o)
 
 INC_PATH = 	./includes
 
 all :		$(NAME)
 
-$(NAME) : $(SRC_OBJ)
+$(NAME) : $(OBJ)
 		$(CC) $(CXXFLAGS) -I $(INC_PATH) -o $@ $^
-		mv $(SRC_OBJ) ./objects/
 
 clean :
-			rm -f $(addprefix ./objects/, $(OBJ))
+			rm -f $(OBJ)
 
 fclean :	clean
 			rm -f $(NAME)
