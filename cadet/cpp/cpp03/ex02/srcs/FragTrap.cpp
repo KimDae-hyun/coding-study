@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   FragTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: daekim <daekim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/25 18:39:49 by daekim            #+#    #+#             */
+/*   Updated: 2021/11/25 18:39:52 by daekim           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/FragTrap.hpp"
 
 FragTrap::FragTrap(void)
@@ -37,6 +49,7 @@ FragTrap::~FragTrap()
 FragTrap::FragTrap(const FragTrap &src) : ClapTrap(src)
 {
 	*this = src;
+   std::cout << "FragTrap <" << Name << "> is copy called !"<< std::endl;
 }
 
 void FragTrap::highFiveGuys()

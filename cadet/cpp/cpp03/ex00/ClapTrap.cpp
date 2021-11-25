@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: daekim <daekim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/25 18:33:22 by daekim            #+#    #+#             */
+/*   Updated: 2021/11/25 18:33:34 by daekim           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap()
@@ -38,6 +50,7 @@ ClapTrap & ClapTrap::operator=(const ClapTrap &src)
 ClapTrap::ClapTrap(const ClapTrap &src)
 {
 	*this = src;
+    std::cout << "ClapTrap <" << Name << "> is copy called !"<< std::endl;
 }
 
 void ClapTrap::attack(std::string const & target)

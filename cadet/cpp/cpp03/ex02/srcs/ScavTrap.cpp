@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: daekim <daekim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/25 18:39:55 by daekim            #+#    #+#             */
+/*   Updated: 2021/11/25 18:39:57 by daekim           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/ScavTrap.hpp"
 
 ScavTrap::ScavTrap(void)
@@ -31,15 +43,31 @@ ScavTrap & ScavTrap::operator=(const ScavTrap &src)
 
 ScavTrap::~ScavTrap()
 {
-    std::cout << "ScavTrap is uncalled !"<< std::endl;
+    std::cout << "ScavTrap <" << Name << "> is uncalled !"<< std::endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap &src) : ClapTrap(src)
 {
 	*this = src;
+    std::cout << "ScavTrap <" << Name << "> is copy called !"<< std::endl;
 }
 
 void ScavTrap::guardGate()
 {
-    std::cout << "ScavTrap is in guardGate mode !"<< std::endl;
+    std::cout << "ScavTrap <" << Name << "> is in guardGate mode !"<< std::endl;
+}
+
+void ScavTrap::attack(std::string const & target)
+{
+    if (Energy_points == 0)
+    {
+        std::cout << "ScavTrap <" << Name \
+        << "> has no Energy point !" <<std::endl;
+    }
+    else
+    {
+        Energy_points--;
+        std::cout << "ScavTrap <" << Name \
+        << "> attacks <" << target << ">" << std::endl;
+    }
 }

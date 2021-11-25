@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: daekim <daekim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/25 18:41:36 by daekim            #+#    #+#             */
+/*   Updated: 2021/11/25 18:41:40 by daekim           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/DiamondTrap.hpp"
 
 DiamondTrap::DiamondTrap(void)
@@ -6,13 +18,12 @@ DiamondTrap::DiamondTrap(void)
     Hitpoints = FragTrap::Hitpoints;
     Energy_points = ScavTrap::Energy_points;
     Attack_damage = FragTrap::Attack_damage;
-    std::cout << "DiamondTrap <" << Name << "> is called !"<< std::endl;
 }
 
-DiamondTrap::DiamondTrap(std::string name) : ScavTrap(name), FragTrap(name) 
+DiamondTrap::DiamondTrap(std::string name) : ScavTrap(name), FragTrap(name)
 {
     this->Name = name;
-    ClapTrap::Name = name + "_clap_name";
+    ClapTrap::Name = Name + "_clap_name";
     Hitpoints = FragTrap::Hitpoints;
     Energy_points = ScavTrap::Energy_points;
     Attack_damage = FragTrap::Attack_damage;
@@ -36,9 +47,10 @@ DiamondTrap::~DiamondTrap()
     std::cout << "DiamondTrap <" << Name << "> is uncalled !"<< std::endl;
 }
 
-DiamondTrap::DiamondTrap(const DiamondTrap &src) : ClapTrap(src), ScavTrap(src), FragTrap(src)
+DiamondTrap::DiamondTrap(const DiamondTrap &src) : ScavTrap(src), FragTrap(src)
 {
 	*this = src;
+    std::cout << "DiamondTrap <" << Name << "> is copy called !"<< std::endl;
 }
 
 void DiamondTrap::whoAmI()
