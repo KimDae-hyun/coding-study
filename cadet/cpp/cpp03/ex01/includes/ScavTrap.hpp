@@ -13,7 +13,7 @@
 #ifndef SCAVTRAP_HPP
 # define SCAVTRAP_HPP
 
-#include "ClapTrap.hpp"
+# include "ClapTrap.hpp"
 
 class ScavTrap : public ClapTrap
 {
@@ -24,7 +24,7 @@ class ScavTrap : public ClapTrap
         ~ScavTrap();
 
         ScavTrap & operator=(const ScavTrap &src);
-        virtual void attack(std::string const & target);
+        void attack(std::string const & target);
         void guardGate();
 };
 

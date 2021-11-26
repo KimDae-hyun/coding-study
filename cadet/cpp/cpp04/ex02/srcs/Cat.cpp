@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: daekim <daekim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/26 19:36:57 by daekim            #+#    #+#             */
+/*   Updated: 2021/11/26 19:37:00 by daekim           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/Cat.hpp"
 
 Cat::Cat(void)
@@ -10,6 +22,7 @@ Cat::Cat(void)
 Cat::Cat(const Cat &src) : Animal(src)
 {
 	*this = src;
+	std::cout << "Cat copy Born!" << std::endl;
 }
 
 Cat::~Cat(void)
@@ -27,7 +40,6 @@ Cat & Cat::operator=(const Cat &src)
 		for (int i = 0; i < 100; i++)
 			brain->copyIdeas(src.brain->outputIdeas(i), i);
 	}
-	std::cout << "Cat copy Born!" << std::endl;
 	return (*this);
 }
 
@@ -50,9 +62,4 @@ void Cat::showIdeas() const
 std::string Cat::outputIdeas(int i) const
 {
     return (brain->outputIdeas(i));
-}
-
-void Cat::dupIdeas(const Animal &animal)
-{
-    brain->dupIdeas(animal);
 }

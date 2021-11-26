@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: daekim <daekim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/26 19:39:01 by daekim            #+#    #+#             */
+/*   Updated: 2021/11/26 19:39:03 by daekim           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/AMateria.hpp"
 
 Cure::Cure()
@@ -8,7 +20,7 @@ Cure::Cure()
 
 Cure::Cure(const Cure& src) : AMateria (src)
 {
-	*this = src;
+	std::cout << "copy Cure!" << std::endl;
 }
 
 Cure & Cure::operator=(const Cure& src)
@@ -17,7 +29,6 @@ Cure & Cure::operator=(const Cure& src)
 	{
 		type = src.getType();
 	}
-	std::cout << "new Cure!" << std::endl;
 	return (*this);
 }
 

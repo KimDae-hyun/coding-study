@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: daekim <daekim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/26 19:34:09 by daekim            #+#    #+#             */
+/*   Updated: 2021/11/26 19:34:13 by daekim           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/Animal.hpp"
 
 Animal::Animal(void)
@@ -8,8 +20,8 @@ Animal::Animal(void)
 
 Animal::Animal(const Animal &src)
 {
-	std::cout << "Animal copy Born!" << std::endl;
 	*this = src;
+	std::cout << "Animal copy Born!" << std::endl;
 }
 
 Animal::~Animal(void)
@@ -36,17 +48,4 @@ void Animal::addIdea(std::string idea, int i)
 	idea = "";
 	i = 0;
 	std::cout << idea << i << std::endl;
-}
-
-std::string Animal::outputIdeas(int i) const
-{
-	i = 0;
-	std::cout << i << std::endl;
-	return("");
-}
-
-void Animal::dupIdeas(const Animal &animal)
-{
-	Animal a;
-    a = animal;
 }

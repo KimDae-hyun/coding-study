@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: daekim <daekim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/26 18:51:26 by daekim            #+#    #+#             */
+/*   Updated: 2021/11/26 18:51:32 by daekim           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef ANIMAL_HPP
 # define ANIMAL_HPP
 
@@ -8,6 +20,7 @@ class Animal
 {
     protected:
         std::string type;
+
     public:
         Animal();
         Animal(const Animal & src);
@@ -15,12 +28,10 @@ class Animal
      	
         Animal & operator=(const Animal &src);
 
-        virtual void makeSound() const {};
         std::string getType() const;
+        virtual void makeSound() const {};
         virtual void addIdea(std::string idea, int i);
         virtual void showIdeas() const {};
-        virtual std::string outputIdeas(int i) const;
-        virtual void dupIdeas(const Animal &animal);
 };
 
 #endif

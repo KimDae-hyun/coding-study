@@ -22,9 +22,8 @@ class ClapTrap
         unsigned int Hitpoints;
         unsigned int Energy_points;
         unsigned int Attack_damage;
+    
     public:
-
-
         ClapTrap();
         ClapTrap(std::string name);
         ClapTrap(const ClapTrap &src);
@@ -32,7 +31,7 @@ class ClapTrap
 
         ClapTrap & operator=(const ClapTrap &src);
         
-        virtual void attack(std::string const & target);
+        void attack(std::string const & target);
         void takeDamage(unsigned int amount);
         void beRepaired(unsigned int amount);
 };

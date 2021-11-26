@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: daekim <daekim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/26 18:41:26 by daekim            #+#    #+#             */
+/*   Updated: 2021/11/26 18:41:33 by daekim           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/WrongCat.hpp"
 
 WrongCat::WrongCat(void)
@@ -8,7 +20,7 @@ WrongCat::WrongCat(void)
 
 WrongCat::WrongCat(const WrongCat &src) : WrongAnimal(src)
 {
-	std::cout << "WrongCat Born!" << std::endl;
+	std::cout << "Copy WrongCat Born!" << std::endl;
 	*this = src;
 }
 

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ICharacter.hpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: daekim <daekim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/26 19:38:23 by daekim            #+#    #+#             */
+/*   Updated: 2021/11/26 19:38:25 by daekim           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef ICHARACTER_HPP
 # define ICHARACTER_HPP
 
@@ -20,6 +32,7 @@ class Character : public ICharacter
 	private:
 		std::string Name;
 		AMateria *materia[4];
+		
 	public:
 		Character();
 		Character(std::string const &Name);

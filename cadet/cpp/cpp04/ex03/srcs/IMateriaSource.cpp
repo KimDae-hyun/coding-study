@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   IMateriaSource.cpp                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: daekim <daekim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/26 19:39:09 by daekim            #+#    #+#             */
+/*   Updated: 2021/11/26 19:39:11 by daekim           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/IMateriaSource.hpp"
 
 MateriaSource::MateriaSource()
@@ -10,6 +22,7 @@ MateriaSource::MateriaSource()
 MateriaSource::MateriaSource(const MateriaSource& src)
 {
 	*this = src;
+	std::cout << "copy materiaSource!" << std::endl;
 }
 
 MateriaSource & MateriaSource::operator=(const MateriaSource& src)
@@ -24,7 +37,6 @@ MateriaSource & MateriaSource::operator=(const MateriaSource& src)
 				materia[i] = NULL;
 		}
 	}
-	std::cout << "new materiaSource!" << std::endl;
 	return (*this);
 }
 

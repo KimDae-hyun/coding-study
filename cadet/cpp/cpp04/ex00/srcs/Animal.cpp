@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: daekim <daekim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/26 18:39:44 by daekim            #+#    #+#             */
+/*   Updated: 2021/11/26 18:40:28 by daekim           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/Animal.hpp"
 
 Animal::Animal(void)
@@ -8,7 +20,7 @@ Animal::Animal(void)
 
 Animal::Animal(const Animal &src)
 {
-	std::cout << "Animal Born!" << std::endl;
+	std::cout << "Copy Animal Born!" << std::endl;
 	*this = src;
 }
 

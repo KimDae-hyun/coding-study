@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: daekim <daekim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/26 18:41:06 by daekim            #+#    #+#             */
+/*   Updated: 2021/11/26 18:41:14 by daekim           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/WrongAnimal.hpp"
 
 WrongAnimal::WrongAnimal(void)
@@ -8,7 +20,7 @@ WrongAnimal::WrongAnimal(void)
 
 WrongAnimal::WrongAnimal(const WrongAnimal &src)
 {
-	std::cout << "WrongAnimal Born!" << std::endl;
+	std::cout << "Copy WrongAnimal Born!" << std::endl;
 	*this = src;
 }
 

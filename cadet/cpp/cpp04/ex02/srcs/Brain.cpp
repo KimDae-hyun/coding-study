@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: daekim <daekim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/26 19:36:51 by daekim            #+#    #+#             */
+/*   Updated: 2021/11/26 19:36:53 by daekim           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/Brain.hpp"
 
 Brain::Brain(void)
@@ -44,13 +56,6 @@ std::string Brain::outputIdeas(int i) const
 void Brain::showIdeas() const
 {
     for(int i = 0; i < 100; i++)
-        std::cout << i << " : " << ideas[i] << std::endl;
-}
-
-void Brain::dupIdeas(const Animal &animal)
-{
-    for (int i = 0; i < 100; i++)
-    {
-        ideas[i] = animal.outputIdeas(i);
-    }
+        if (ideas[i] != "")
+            std::cout << i << " : " << ideas[i] << std::endl;
 }

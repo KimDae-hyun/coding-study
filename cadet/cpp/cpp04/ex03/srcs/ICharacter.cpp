@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ICharacter.cpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: daekim <daekim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/26 19:39:04 by daekim            #+#    #+#             */
+/*   Updated: 2021/11/26 19:39:07 by daekim           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/ICharacter.hpp"
 
 Character::Character()
 {
-	Name = "doyun";
+	Name = "";
 	for (int i = 0; i < 4; i++)
 		materia[i] = NULL;
 	std::cout << "new Character!" << std::endl;
@@ -11,6 +23,7 @@ Character::Character()
 Character::Character(const Character& src)
 {
 	*this = src;
+	std::cout << "copy Character!" << std::endl;
 }
 
 Character::Character(std::string const &Name)
@@ -34,7 +47,6 @@ Character & Character::operator=(const Character& src)
 				materia[i] = NULL;
 		}
 	}
-	std::cout << "new Character!" << std::endl;
 	return (*this);
 }
 

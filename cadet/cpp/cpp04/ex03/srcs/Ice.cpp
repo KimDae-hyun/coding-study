@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Ice.cpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: daekim <daekim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/26 19:39:14 by daekim            #+#    #+#             */
+/*   Updated: 2021/11/26 19:39:17 by daekim           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/AMateria.hpp"
 
 Ice::Ice()
@@ -8,7 +20,7 @@ Ice::Ice()
 
 Ice::Ice(const Ice& src) : AMateria (src)
 {
-	*this = src;
+	std::cout << "new Ice!" << std::endl;
 }
 
 Ice & Ice::operator=(const Ice& src)
@@ -17,7 +29,6 @@ Ice & Ice::operator=(const Ice& src)
 	{
 		type = src.getType();
 	}
-	std::cout << "new Ice!" << std::endl;
 	return (*this);
 }
 

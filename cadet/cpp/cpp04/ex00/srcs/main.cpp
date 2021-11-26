@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: daekim <daekim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/26 18:41:37 by daekim            #+#    #+#             */
+/*   Updated: 2021/11/26 18:41:55 by daekim           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 # include "../includes/Cat.hpp"
 # include "../includes/Dog.hpp"
 # include "../includes/WrongCat.hpp"
@@ -17,6 +29,7 @@ int main(void)
     delete j;
     delete meta;
 
+    std::cout << std::endl;
 
     const WrongAnimal* alpha = new WrongAnimal();
     const WrongAnimal* k = new WrongCat();

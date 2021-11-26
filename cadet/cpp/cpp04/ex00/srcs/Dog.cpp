@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: daekim <daekim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/26 18:40:50 by daekim            #+#    #+#             */
+/*   Updated: 2021/11/26 18:41:01 by daekim           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/Dog.hpp"
 
 Dog::Dog(void)
@@ -8,7 +20,7 @@ Dog::Dog(void)
 
 Dog::Dog(const Dog &src) : Animal(src)
 {
-	std::cout << "Dog Born!" << std::endl;
+	std::cout << "Copy Dog Born!" << std::endl;
 	*this = src;
 }
 

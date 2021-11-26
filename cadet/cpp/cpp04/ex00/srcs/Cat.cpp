@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: daekim <daekim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/26 18:40:34 by daekim            #+#    #+#             */
+/*   Updated: 2021/11/26 18:40:45 by daekim           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/Cat.hpp"
 
 Cat::Cat(void)
@@ -8,7 +20,7 @@ Cat::Cat(void)
 
 Cat::Cat(const Cat &src) : Animal(src)
 {
-	std::cout << "Cat Born!" << std::endl;
+	std::cout << "Copy Cat Born!" << std::endl;
 	*this = src;
 }
 

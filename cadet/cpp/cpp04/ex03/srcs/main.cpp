@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: daekim <daekim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/26 19:39:18 by daekim            #+#    #+#             */
+/*   Updated: 2021/11/26 19:39:21 by daekim           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/ICharacter.hpp"
 #include "../includes/IMateriaSource.hpp"
 
@@ -78,6 +90,7 @@ int main()
 	me->use(5, *bob);
 	me->unequip(5);
 	delete tmp7;
+
 
 	delete bob;
 	delete me;
