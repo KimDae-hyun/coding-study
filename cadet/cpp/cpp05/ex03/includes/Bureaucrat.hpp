@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Form.hpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: daekim <daekim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/27 15:53:46 by daekim            #+#    #+#             */
+/*   Updated: 2021/11/27 15:53:46 by daekim           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
 
@@ -30,6 +42,7 @@ class Bureaucrat
     private:
         const std::string name;
         int grade;
+
     public:
         Bureaucrat();
         Bureaucrat(const Bureaucrat &src);
@@ -46,7 +59,7 @@ class Bureaucrat
         void demotion();
         void demotion(int changetheworld);
         void signForm(Form &src);
-        //void executeForm(Form const & form);
+        void executeForm(Form const & form);
 };
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat &src);

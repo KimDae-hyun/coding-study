@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Form.hpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: daekim <daekim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/27 13:13:46 by daekim            #+#    #+#             */
+/*   Updated: 2021/11/27 13:14:13 by daekim           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FORM_HPP
 # define FORM_HPP
 
@@ -14,6 +26,7 @@ class Form
         const int signGrade;
         const int executeGrade;
         bool sign;
+
     public:
         Form();
         Form(const Form &src);

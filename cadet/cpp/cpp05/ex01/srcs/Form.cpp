@@ -9,6 +9,7 @@ Form::Form(void) : name("paper"), signGrade(120), executeGrade(80)
 Form::Form(const Form &src) : name(src.name), signGrade(120), executeGrade(80)
 {
     *this = src;
+    std::cout << "Create Form!" << std::endl;
 }
 
 Form::Form(const int signGrade, const int executeGrade) : \
@@ -28,7 +29,6 @@ Form& Form::operator=(const Form &src)
     if (this != &src)
     {
         sign = src.sign;
-        std::cout << "Create Form!" << std::endl;
     }
     return (*this);
 }

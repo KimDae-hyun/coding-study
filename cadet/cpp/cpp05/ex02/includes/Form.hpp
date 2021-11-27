@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Form.hpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: daekim <daekim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/27 15:52:44 by daekim            #+#    #+#             */
+/*   Updated: 2021/11/27 15:52:45 by daekim           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FORM_HPP
 # define FORM_HPP
 
@@ -15,6 +27,7 @@ class IsSignedException : public std::exception
             return ("Not signed");
         }
 }; 
+
 class Form
 {
     private:
@@ -23,6 +36,7 @@ class Form
         const int executeGrade;
         bool sign;
         std::string target;
+
     public:
         Form();
         Form(const Form &src);

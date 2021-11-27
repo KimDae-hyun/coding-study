@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: daekim <daekim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/27 15:54:06 by daekim            #+#    #+#             */
+/*   Updated: 2021/11/27 15:54:08 by daekim           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat() : name("cheolsoo")
@@ -100,7 +112,23 @@ void Bureaucrat::signForm(Form &src)
     }
 }
 
-/*void Bureaucrat::executeForm(Form const & form)
+void Bureaucrat::executeForm(Form const & form)
 {
-    
-}*/
+    if (form.getSign() != true)
+    {
+        std::cout << "<" << getName() << \
+        "> cannot excute <" << form.getName() << \
+        "> because <Not signed !!!>" << std::endl;
+    }
+    else if (form.getExecuteGrade() < grade)
+    {
+        std::cout << "<" << getName() << \
+        "> cannot excute <" << form.getName() << \
+        "> because <Too Low !!!>" << std::endl;
+    }
+    else
+    {
+        form.execute(*this);
+        std::cout << getName() << " executes " << form.getName() << std::endl;
+    }
+}

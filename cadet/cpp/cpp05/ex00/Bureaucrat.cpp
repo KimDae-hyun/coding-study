@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: daekim <daekim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/27 13:10:50 by daekim            #+#    #+#             */
+/*   Updated: 2021/11/27 13:11:58 by daekim           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat() : name("cheolsoo")
@@ -8,8 +20,9 @@ Bureaucrat::Bureaucrat() : name("cheolsoo")
 
 Bureaucrat::Bureaucrat(const Bureaucrat &src) : name(src.name)
 {
-    *this = src;
-}    
+	*this = src;
+	std::cout << "Copy Create Bureaucrat!" << std::endl;
+}
 
 Bureaucrat::Bureaucrat(const int grade) : name("cheolsoo")
 {
@@ -26,7 +39,6 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat &src)
     if (this != &src)
     {
         grade = src.getGrade();
-        std::cout << "Create Bureaucrat!" << std::endl;
     }
     return (*this);
 }

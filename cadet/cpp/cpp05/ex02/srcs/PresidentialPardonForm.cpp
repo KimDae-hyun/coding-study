@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: daekim <daekim@student.42seoul.kr>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/27 15:53:02 by daekim            #+#    #+#             */
+/*   Updated: 2021/11/27 15:53:03 by daekim           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/PresidentialPardonForm.hpp"
 
 PresidentialPardonForm::PresidentialPardonForm() : Form("Presidential Form", 25, 5, "cheolsoo")
