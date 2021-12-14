@@ -53,7 +53,7 @@ int in_check(t_cir *c, float x, float y)
 {
 	float d;
 
-	d = (float)sqrt((x - c->x) * (x - c->x) + (y - c->y) * (y - c->y));
+	d = sqrtf((x - c->x) * (x - c->x) + (y - c->y) * (y - c->y));
 	if (d - c->r <= 0.00000000)
 	{
 		if (d - c->r <= -1.00000000)
@@ -96,7 +96,11 @@ void draw_cir(t_draw *d)
 
 	i = -1;
 	while (++i < d->h)
-		printf("%.*s\n", d->w, d->back + i * d->w);
+	{
+		write(1, d->back + i * d->w, d->w);
+		write(1, "\n", 1);
+	}
+	return ;
 }
 
 int exec(FILE *file)

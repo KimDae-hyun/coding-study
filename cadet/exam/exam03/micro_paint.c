@@ -92,7 +92,11 @@ void draw_rec(t_draw *d)
 
 	i = -1;
 	while (++i < d->h)
-		printf("%.*s\n", d->w, d->back + i * d->w); 
+	{
+		write(1, d->back + i * d->w, d->w);
+		write(1, "\n", 1);
+	}
+	return ;	
 }
 
 int exec(FILE *file)
